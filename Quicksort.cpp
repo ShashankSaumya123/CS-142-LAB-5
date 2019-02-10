@@ -1,5 +1,7 @@
 #include<iostream>
 using namespace std;
+
+//The quicksort function
 void qs(int a[],int f,int l)
 {
 	//When there is only one element present it will skip the entire if part and function will terminate
@@ -8,6 +10,7 @@ void qs(int a[],int f,int l)
 		int pivot=l,temp;
 		for(int i=l-1;i>=f;i--)
 		{
+			//If ith term bigger than pivot, store it in temp and shift the entire arrary upto pivot a space and put the ith term after pivot
 			if(a[i]>a[pivot])
 			{
 				temp=a[i];
@@ -16,13 +19,17 @@ void qs(int a[],int f,int l)
 					a[j]=a[j+1];
 				}
 				a[pivot]=temp;
+				//Update pivot
 				pivot--;
 			}
 		}
+		//Use recursion
 		qs(a,f,pivot-1);
 		qs(a,pivot+1,l);
 	}
 }
+
+//Function for displaying the array
 void disp(int a[],int n)
 {
     cout << "Sorted array:-\n";
@@ -32,6 +39,7 @@ void disp(int a[],int n)
 	}
 	cout<<endl;
 }
+
 int main()
 {
 	//declare the variables
