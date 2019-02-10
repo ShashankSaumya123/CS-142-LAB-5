@@ -55,5 +55,5 @@ int main()
 	}
 	qs(a,0,n-1);
 	disp(a,n);
-	return 0;
+return 0;
 }
